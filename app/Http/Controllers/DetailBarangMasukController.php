@@ -60,13 +60,11 @@ class DetailBarangMasukController extends Controller
     // }
     
 
-    // public function delete($id){
-    //     $hapus = guru::findOrFail($id);
-    //     $path_foto = app_path("../public/uploads/img/{{$hapus->foto}}");
-    //     Storage::delete($path_foto);    
-    //     $hapus->delete();   
-    //     return redirect()->route('semua_guru');
-    // }
+    public function delete($id){
+        $hapus = \App\DetailBarangMasuk::find($id);
+        $hapus->delete();
+        return redirect()->route('semua_detail_barang_masuk');
+    }
     /**
      * Show the form for creating a new resource.
      *

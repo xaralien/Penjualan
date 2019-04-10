@@ -34,6 +34,11 @@ Penjualan
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
+                <label>Nomor Faktur</label>
+                <input type="text" class="form-control select2" name="nofaktur" placeholder="Nama Barang">
+              </div>
+              <!-- /.form-group -->
+              <div class="form-group">
                 <label>Tanggal Penjualan</label>
                 <input type="date" class="form-control select2" name="tanggalpenjualan" placeholder="Nama Barang">
               </div>
@@ -94,6 +99,7 @@ Penjualan
                   <th>Bayar</th>
                   <th>Sisa</th>
                   <th>Total</th>
+                  <th>Hapus</th>
                 </tr>
                 </thead>
                 @foreach($penjualan as $value)
@@ -105,6 +111,7 @@ Penjualan
                   <td>{{ $value->bayar }}</td>
                   <td>{{ $value->sisa }}</td>
                   <td>{{ $value->total }}</td>
+                  <td><a href="delete/{{$value->id}}">Hapus</a></td>
                 </tr>
                 </tbody>
                 @endforeach
@@ -116,6 +123,7 @@ Penjualan
                 <th>Bayar</th>
                 <th>Sisa</th>
                 <th>Total</th>
+                  <th>Hapus</th>
                 </tr>
                 </tfoot>
               </table>

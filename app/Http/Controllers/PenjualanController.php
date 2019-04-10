@@ -20,6 +20,7 @@ class PenjualanController extends Controller
     
     public function save(Request $r){
         $penjualan = new penjualan;
+        $penjualan->nofaktur = $r->input('nofaktur');
         $penjualan->tanggalpenjualan= $r->input('tanggalpenjualan');
         $penjualan->idpetugas = $r->input('idpetugas');
         $penjualan->bayar = $r->input('bayar');
@@ -61,13 +62,11 @@ class PenjualanController extends Controller
     // }
     
 
-    // public function delete($id){
-    //     $hapus = guru::findOrFail($id);
-    //     $path_foto = app_path("../public/uploads/img/{{$hapus->foto}}");
-    //     Storage::delete($path_foto);    
-    //     $hapus->delete();   
-    //     return redirect()->route('semua_guru');
-    // }
+    public function delete($id){
+        $hapus = \App\Penjualan::find($id);
+        $hapus->delete();
+        return redirect()->route('semua_penjualan');
+    }
 
     /**
      * Show the form for creating a new resource.

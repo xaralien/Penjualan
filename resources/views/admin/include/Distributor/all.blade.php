@@ -95,6 +95,7 @@ Distributor
                   <th>Kota Asal</th>
                   <th>Email</th>
                   <th>Telepon</th>
+                  <th>Hapus</th>
                 </tr>
                 </thead>
                 @foreach($distributor as $value)
@@ -106,6 +107,7 @@ Distributor
                   <td>{{ $value->kotaasal }}</td>
                   <td>{{ $value->Email }}</td>
                   <td>{{ $value->telpon }}</td>
+                  <td><a href="delete/{{$value->id}}">Hapus</a></td>
                 </tr>
                 </tbody>
                 @endforeach
@@ -117,6 +119,7 @@ Distributor
                   <th>Kota Asal</th>
                   <th>Email</th>
                   <th>Telepon</th>
+                  <th>Hapus</th>
                 </tr>
                 </tfoot>
               </table>

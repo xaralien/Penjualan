@@ -89,6 +89,7 @@ Detail Penjualan
                   <th>Kode Barang</th>
                   <th>Jumlah</th>
                   <th>Subtotal</th>
+                  <th>Hapus</th>
                 </tr>
                 </thead>
                 @foreach($detailpenjualan as $value)
@@ -98,6 +99,7 @@ Detail Penjualan
                   <td>{{ $value->kodebarang }}</td>
                   <td>{{ $value->jumlah }}</td>
                   <td>{{ $value->subtotal }}</td>
+                  <td><a href="delete/{{$value->id}}">Hapus</a></td>
                 </tr>
                 </tbody>
                 @endforeach
@@ -107,6 +109,7 @@ Detail Penjualan
                 <th>Kode Barang</th>
                 <th>Jumlah</th>
                 <th>Subtotal</th>
+                  <th>Hapus</th>
                 </tr>
                 </tfoot>
               </table>

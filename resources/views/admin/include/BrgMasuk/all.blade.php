@@ -34,8 +34,8 @@ Barang Masuk
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label>Tanggal Masuk</label>
-                <input type="date" class="form-control select2" name="tanggalmasuk" placeholder="Nama Barang">
+                <label>Nomor Nota</label>
+                <input type="text" class="form-control select2" name="nonota" placeholder="Nama Barang">
               </div>
               <!-- /.form-group -->
               <div class="form-group">
@@ -48,6 +48,11 @@ Barang Masuk
                 <label>ID Petugas</label>
                	<input type="text" class="form-control select2" name="idpetugas" placeholder="ID Petugas">
                 </select>
+              </div>
+              <!-- /.form-group -->
+              <div class="form-group">
+                <label>Tanggal Masuk</label>
+                <input type="date" class="form-control select2" name="tanggalmasuk" placeholder="Nama Barang">
               </div>
               <!-- /.form-group -->
             </div>
@@ -88,6 +93,7 @@ Barang Masuk
                   <th>Id Distributor</th>
                   <th>ID Petugas</th>
                   <th>Total</th>
+                  <th>Hapus</th>
                 </tr>
                 </thead>
                 @foreach($brgmasuk as $value)
@@ -98,6 +104,7 @@ Barang Masuk
                   <td>{{ $value->iddistributor }}</td>
                   <td>{{ $value->idpetugas }}</td>
                   <td>{{ $value->total }}</td>
+                  <td><a href="delete/{{$value->id}}">Hapus</a></td>
                 </tr>
                 </tbody>
                 @endforeach
@@ -108,6 +115,7 @@ Barang Masuk
                 <th>Id Distributor</th>
                 <th>ID Petugas</th>
                 <th>Total</th>
+                  <th>Hapus</th>
                 </tr>
                 </tfoot>
               </table>

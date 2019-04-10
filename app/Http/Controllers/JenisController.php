@@ -30,6 +30,11 @@ class JenisController extends Controller
         return redirect()->route('semua_jenis');
     }
 
+    public function delete($id){
+        $hapus = \App\Jenis::find($id);
+        $hapus->delete();
+        return redirect()->route('semua_jenis');
+    }
     /**
      * Show the form for creating a new resource.
      *

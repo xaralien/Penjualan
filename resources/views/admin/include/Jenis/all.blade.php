@@ -33,7 +33,11 @@ Barang
         <div class="box-body">
           <div class="row">
             <div class="col-md-6">
-              
+            <div class="form-group">
+                <label>kodejenis</label>
+               <input type="text" class="form-control select2" name="kodejenis" placeholder="Alamat">
+                </select>
+              </div>
               <!-- /.form-group -->
               <div class="form-group">
                 <label>Jenis</label>
@@ -73,6 +77,7 @@ Barang
                 <tr>
                   <th>Kode Jenis</th>
                   <th>Jenis</th>
+                  <th>Hapus</th>
                 </tr>
                 </thead>
                 @foreach($jenis as $value)
@@ -80,6 +85,7 @@ Barang
                 <tr>
                   <td>{{ $value->kodejenis }}</td>
                   <td>{{ $value->jenis }}</td>
+                  <td><a href="delete/{{$value->id}}">Hapus</a></td>
                 </tr>
                 </tbody>
                 @endforeach
@@ -87,6 +93,7 @@ Barang
                 <tr>
                 <th>Kode Jenis</th>
                 <th>Jenis</th>
+                  <th>Hapus</th>
                 </tr>
                 </tfoot>
               </table>

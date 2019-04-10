@@ -33,6 +33,12 @@ class DistributorController extends Controller
         return redirect()->route('semua_distributor');
     }
 
+    public function delete($id){
+        $hapus = \App\Distributor::find($id);
+        $hapus->delete();
+        return redirect()->route('semua_distributor');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

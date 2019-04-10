@@ -88,6 +88,7 @@ Petugas
                   <th>Alamat</th>
                   <th>Email</th>
                   <th>Telepon</th>
+                  <th>Hapus</th>
                 </tr>
                 </thead>
                 @foreach($petugas as $value)
@@ -98,6 +99,7 @@ Petugas
                   <td>{{ $value->alamat }}</td>
                   <td>{{ $value->email }}</td>
                   <td>{{ $value->telpon }}</td>
+                  <td><a href="delete/{{$value->id}}">Hapus</a></td>
                 </tr>
                 </tbody>
                 @endforeach
@@ -108,6 +110,7 @@ Petugas
                   <th>Alamat</th>
                   <th>Email</th>
                   <th>Telepon</th>
+                  <th>Hapus</th>
                 </tr>
                 </tfoot>
               </table>

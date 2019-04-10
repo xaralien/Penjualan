@@ -25,7 +25,7 @@ Route::prefix('barang')->group(function(){
 	Route::post("/save", "BarangController@save")->name("simpan_barang");
 	Route::get("/edit/{id}", "BarangController@edit")->name("edit_barang");
 	Route::post("/update", "BarangController@update")->name("update_barang");
-	Route::get("/delete/{kodebarang}", "BarangController@delete")->name("hapus_barang");
+	Route::get("/delete/{id}", "BarangController@delete")->name("hapus_barang");
 });
 
 Route::prefix('brgmasuk')->group(function(){

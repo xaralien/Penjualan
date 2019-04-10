@@ -34,19 +34,19 @@ Barang
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label>Nama Barang</label>
-                <input type="text" class="form-control select2" name="namabarang" placeholder="Nama Barang">
+                <label>Kode Barang</label>
+                <input type="text" class="form-control select2" name="kodebarang" placeholder="Nama Barang">
               </div>
               <!-- /.form-group -->
               <div class="form-group">
-                <label>Kode Jenis</label>
-               <input type="text" class="form-control select2" name="kodejenis" placeholder="Kode Jenis">
+                <label>Nama Barang</label>
+               <input type="text" class="form-control select2" name="namabarang" placeholder="Kode Jenis">
                 </select>
               </div>
 
               <div class="form-group">
-                <label>Stok</label>
-               	<input type="text" class="form-control select2" name="stok" id="stok" placeholder="Stok">
+                <label>Kode Jenis</label>
+               	<input type="text" class="form-control select2" name="kodejenis" id="stok" placeholder="Stok">
                 </select>
               </div>
               <!-- /.form-group -->
@@ -61,6 +61,12 @@ Barang
               <div class="form-group">
                 <label>Harga Jual</label>
                	<input type="text" class="form-control select2" name="hargajual" placeholder="Harga Jual">
+                </select>
+              </div>
+              <!-- /.form-group -->
+              <div class="form-group">
+                <label>Stok</label>
+               	<input type="text" class="form-control select2" name="stok" placeholder="Harga Jual">
                 </select>
               </div>
               <!-- /.form-group -->
@@ -95,6 +101,7 @@ Barang
                   <th>Harga Netral</th>
                   <th>Harga Jual</th>
                   <th>Stok</th>
+                  <th>Hapus</th>
                 </tr>
                 </thead>
                 @foreach($barang as $value)
@@ -106,7 +113,7 @@ Barang
                   <td>{{ $value->harganet }}</td>
                   <td>{{ $value->hargajual }}</td>
                   <td>{{ $value->stok }}</td>
-                  <td><a href="delete/{kodebarang}">Hapus</a></td>
+                  <td><a href="delete/{{$value->id}}">Hapus</a></td>
                 </tr>
                 </tbody>
                 @endforeach

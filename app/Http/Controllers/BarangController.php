@@ -22,6 +22,7 @@ class BarangController extends Controller
 
     public function save(Request $r){
         $barang = new barang;
+        $barang->kodebarang = $r->input('kodebarang');
         $barang->namabarang = $r->input('namabarang');
         $barang->kodejenis = $r->input('kodejenis');
         $barang->harganet = $r->input('harganet');
@@ -36,7 +37,7 @@ class BarangController extends Controller
     }
 
     public function edit($id){
-        $data['barang'] = \App\barang::find($id);
+        $barang['barang'] = \App\barang::find($kodebarang);
 
         return view('barang.edit')->with($data);
     }
@@ -63,9 +64,9 @@ class BarangController extends Controller
     // }
     
 
-    public function delete($kodebarang){
-        $hapus = \App\Barang::find($kodebarang);
-        $hapus->delete();   
+    public function delete($id){
+        $hapus = \App\Barang::find($id);
+        $hapus->delete();
         return redirect()->route('semua_barang');
     }
 }

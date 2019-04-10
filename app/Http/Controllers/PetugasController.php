@@ -31,6 +31,12 @@ class PetugasController extends Controller
         //ok coba
         return redirect()->route('semua_petugas');
     }
+    
+    public function delete($id){
+        $hapus = \App\Petugas::find($id);
+        $hapus->delete();
+        return redirect()->route('semua_petugas');
+    }
 
     /**
      * Show the form for creating a new resource.

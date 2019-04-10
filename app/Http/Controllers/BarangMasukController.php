@@ -61,12 +61,11 @@ class BarangMasukController extends Controller
     // }
     
 
-    // public function delete($id){
-    //     $hapus = guru::findOrFail($id);
-    //     $path_foto = app_path("../public/uploads/img/{{$hapus->foto}}");
-    //     Storage::delete($path_foto);    
-    //     $hapus->delete();   
-    //     return redirect()->route('semua_guru');
+    public function delete($id){
+        $hapus = \App\BarangMasuk::find($id);
+        $hapus->delete();
+        return redirect()->route('semua_barang_masuk');
+    }
     // }
 
     /**
