@@ -40,28 +40,29 @@ exports.store = function(req, res){
 
 })
 }
-exports.update = function(req, res){
-	let id = req.params.id;
-	let data = {
-		name : req.body.name,
-		email : req.body.email,
-		phone : req.body.phone,
-		address : req.body.address,
-		password : req.body.password,
-		profile_image : req.body.profile_image,
-		level : req.body.level,
-	}
-	db.query('UPDATE users set name=?, email=?, phone=?, address=?, password=?, profile_image=?, level=? WHERE id=?',
-		[data.name, data.email, data.phone, data.address, data.password, data.address, data.profile_image, data.level,id], function(error,result){
-			if (error) throw error;
-				let changedRows = result.changedRows;
-			if(changedRows > 0){
-				data.id = id
-				res.send(data, 200)
-			}else{
-				res.send(404)
-			}
-		})
+exports.update = function (req, res) {
+    let id = req.params.id
+    let data = {
+        name : req.body.name,
+    	email : req.body.email,
+    	phone : req.body.phone,
+    	address : req.body.address,
+    	password : req.body.password,
+    	profile_image : req.body.profile_image,
+    	level : req.body.level,
+    }
+    db.query('UPDATE users set name=?, email=?, phone=?, address=?, password=?, profile_image=?, level=? WHERE id=?',
+        [data.name, data.email, data.phone, data.address, data.password, data.profile_image, data.level, id],
+        function (error, results) {
+            if (error) throw error
+            let changedRows = results.changedRows;
+            if (changedRows > 0) {
+                data.id = id
+                res.send(data, 200)
+            } else {
+                res.send(404)
+            }
+        })
 }
 exports.delete = function(req, res){
     var id = req.params.id
